@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaiser-Natron® Bundles — Jetzt 15 % sparen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS — matching energeia-shop.de/kaiser-natron ─── */
+:root {
+  --kn-green:      #006840;
+  --kn-green-dark: #004f30;
+  --kn-green-pale: #e8f2ec;
+  --kn-red:        #D80028;
+  --kn-red-dark:   #b5001f;
+  --kn-white:      #ffffff;
+  --kn-off:        #f7f9f7;
+  --kn-border:     #d6e4db;
+  --kn-text:       #1a2e22;
+  --kn-muted:      #5a7060;
+  --kn-energeia:   #1a1a1a;
+  --font-serif:    'Lora', Georgia, serif;
+  --font-sans:     'Inter', -apple-system, sans-serif;
+  --r:             4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--kn-text);
+  background: var(--kn-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── ENERGEIA BAR ─── */
+.energeia-bar {
+  background: var(--kn-energeia);
+  color: rgba(255,255,255,0.55);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 7px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.energeia-bar a { color: rgba(255,255,255,0.7); text-decoration: none; }
+.energeia-bar strong { color: rgba(255,255,255,0.9); }
+
+/* ─── NAV ─── */
+.site-nav {
+  background: var(--kn-green);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--kn-white);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-logo span { font-style: normal; }
+.nav-pill {
+  background: var(--kn-red);
+  color: var(--kn-white);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 99px;
+}
+
+/* ─── COUNTDOWN BAR ─── */
+.countdown-bar {
+  background: var(--kn-red);
+  color: var(--kn-white);
+  text-align: center;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cd-label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+.cd-timer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.cd-unit {
+  background: rgba(0,0,0,0.25);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  width: 44px;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 3px;
+}
+.cd-colon {
+  font-weight: 700;
+  font-size: 18px;
+  opacity: 0.7;
+  padding: 0 1px;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--kn-green);
+  color: var(--kn-white);
+  padding: 72px 32px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 60px;
+  background: var(--kn-white);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+.hero-seit {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 700;
+  line-height: 1.15;
+  max-width: 680px;
+  margin: 0 auto 20px;
+}
+.hero h1 em { font-style: italic; opacity: 0.85; }
+.hero-sub {
+  font-size: 16px;
+  opacity: 0.78;
+  max-width: 540px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--kn-red);
+  color: var(--kn-white);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: var(--r);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--kn-red-dark); }
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.badge {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.85);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 99px;
+}
+
+/* ─── MANIFESTO ─── */
+.manifesto {
+  background: var(--kn-white);
+  padding: 72px 32px;
+}
+.manifesto .inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.manifesto h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 24px;
+  color: var(--kn-green-dark);
+}
+.manifesto p {
+  color: var(--kn-muted);
+  margin-bottom: 18px;
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+.manifesto p strong { color: var(--kn-text); }
+.blockquote {
+  border-left: 3px solid var(--kn-green);
+  padding: 14px 20px;
+  margin: 28px 0;
+  background: var(--kn-green-pale);
+  border-radius: 0 var(--r) var(--r) 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--kn-text);
+  line-height: 1.6;
+}
+.formula {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--kn-green);
+  color: var(--kn-white);
+  padding: 3px 10px;
+  border-radius: var(--r);
+  letter-spacing: 0.04em;
+}
+
+/* ─── BUNDLES ─── */
+.bundles {
+  background: var(--kn-off);
+  padding: 64px 32px;
+}
+.bundles-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.bundles-header h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 700;
+  color: var(--kn-green-dark);
+  margin-bottom: 8px;
+}
+.bundles-header p {
+  color: var(--kn-muted);
+  font-size: 15px;
+}
+.bundle-grid {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.bundle-card {
+  background: var(--kn-white);
+  border: 1px solid var(--kn-border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.bundle-head {
+  background: var(--kn-green);
+  color: var(--kn-white);
+  padding: 28px 28px 24px;
+  position: relative;
+}
+.bundle-number {
+  font-family: var(--font-serif);
+  font-size: 60px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.07);
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  line-height: 1;
+  pointer-events: none;
+}
+.bundle-name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.bundle-tagline {
+  font-size: 12.5px;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+.bundle-price {
+  margin-top: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.price-was {
+  font-size: 12px;
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+.price-now {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+.price-tag {
+  background: var(--kn-red);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.bundle-body {
+  padding: 24px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.bundle-items {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.bundle-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--kn-border);
+  font-size: 13.5px;
+  color: var(--kn-text);
+}
+.bundle-items li:last-child { border-bottom: none; }
+.bundle-items li::before {
+  content: '✓';
+  color: var(--kn-green);
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.bundle-desc {
+  font-size: 13.5px;
+  color: var(--kn-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.bundle-desc strong { color: var(--kn-text); }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.tag {
+  background: var(--kn-green-pale);
+  color: var(--kn-green-dark);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 99px;
+  border: 1px solid rgba(0,104,64,0.15);
+}
+.btn-shop {
+  display: block;
+  background: var(--kn-red);
+  color: var(--kn-white);
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 13px 20px;
+  border-radius: var(--r);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.15s;
+}
+.btn-shop:hover { background: var(--kn-red-dark); }
+
+/* ─── STAFFEL ─── */
+.staffel {
+  background: var(--kn-green-dark);
+  color: var(--kn-white);
+  padding: 64px 32px;
+}
+.staffel-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+.staffel h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.staffel p {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 32px;
+}
+.staffel-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.staffel-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r);
+  padding: 12px 20px;
+  text-align: left;
+}
+.s-qty {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  min-width: 60px;
+}
+.s-pct {
+  font-weight: 600;
+  font-size: 15px;
+  color: #a8f0c8;
+  min-width: 60px;
+  text-align: center;
+}
+.s-label {
+  font-size: 13px;
+  opacity: 0.6;
+  text-align: right;
+  flex: 1;
+}
+
+/* ─── ABOUT ─── */
+.about {
+  background: var(--kn-white);
+  padding: 72px 32px;
+}
+.about-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.about h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 700;
+  color: var(--kn-green-dark);
+  margin-bottom: 16px;
+}
+.about p {
+  color: var(--kn-muted);
+  font-size: 14.5px;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.about p strong { color: var(--kn-text); }
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+}
+.fact {
+  background: var(--kn-green-pale);
+  border: 1px solid var(--kn-border);
+  border-radius: 6px;
+  padding: 20px 16px;
+  text-align: center;
+}
+.fact-n {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--kn-green);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.fact-l {
+  font-size: 12px;
+  color: var(--kn-muted);
+  line-height: 1.4;
+}
+
+/* ─── DISCLAIMER ─── */
+.disclaimer {
+  background: var(--kn-off);
+  border-top: 1px solid var(--kn-border);
+  padding: 24px 32px;
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--kn-muted);
+  line-height: 1.6;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--kn-energeia);
+  color: rgba(255,255,255,0.45);
+  padding: 28px 32px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.9;
+}
+footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.7); }
+footer strong { color: rgba(255,255,255,0.7); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 720px) {
+  .bundle-grid { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr; }
+  .hero { padding: 52px 20px 72px; }
+  .site-nav { padding: 0 20px; }
+  .staffel-row { flex-wrap: wrap; gap: 4px; }
+  .s-label { text-align: left; min-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- ENERGEIA BAR -->
+<div class="energeia-bar">
+  <span><strong>ENERGEIA</strong> — Eine Marke der ENERGEIA Familie</span>
+  <a href="https://energeia-shop.de/kaiser-natron">Kaiser-Natron® Shop →</a>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="https://energeia-shop.de/kaiser-natron" class="nav-logo">Kaiser-<span>Natron</span>®</a>
+  <span class="nav-pill">15 % Rabatt — 72h</span>
+</nav>
+
+<!-- COUNTDOWN -->
+<div class="countdown-bar">
+  <span class="cd-label">Angebot endet in</span>
+  <div class="cd-timer">
+    <span class="cd-unit" id="cd-h">72</span>
+    <span class="cd-colon">:</span>
+    <span class="cd-unit" id="cd-m">00</span>
+    <span class="cd-colon">:</span>
+    <span class="cd-unit" id="cd-s">00</span>
+  </div>
+  <span class="cd-label">Std · Min · Sek</span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-seit">Seit 1881 · Bielefeld · Familie Holste</p>
+  <h1>Ein Molekül.<br><em>Vier Bundles. Einmal entschieden.</em></h1>
+  <p class="hero-sub">NaHCO₃ — reines Natriumhydrogencarbonat, ohne Zusatzstoffe, ohne Konservierungsmittel, ohne Mikroplastik. Österreichs erster Online-Shop für Kaiser-Natron® hat vier Bundles zusammengestellt — für 72 Stunden mit 15 % Rabatt.</p>
+  <a href="https://energeia-shop.de/kaiser-natron" class="btn-primary">Zu allen Bundles →</a>
+  <div class="hero-badges">
+    <span class="badge">Kein Mikroplastik</span>
+    <span class="badge">Keine Zusatzstoffe</span>
+    <span class="badge">Vegan &amp; glutenfrei</span>
+    <span class="badge">200+ Anwendungen</span>
+  </div>
+</header>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="inner">
+    <h2>Es gibt Produkte, die brauchen keinen Rebrand.</h2>
+    <p>Kein neues Claim. Keine Influencer-Partnerschaft. Keine revolutionäre Formel 2.0. Kaiser-Natron® ist so ein Produkt. <strong>Reines Natriumhydrogencarbonat. <span class="formula">NaHCO₃</span>.</strong> Abgefüllt von der Familie Holste in Bielefeld seit 1881, ohne einen einzigen Zusatzstoff.</p>
+    <div class="blockquote">„Unter deiner Spüle stehen Produkte mit Namensschildern wie ‚Ultra Fresh Ocean Power Burst'. Keines davon riecht nach Ozean. Keines ist besonders frisch. Und alle kosten dreimal so viel wie das, was wirklich funktioniert."</div>
+    <p>Wir haben vier Bundles zusammengestellt, die synthetische Reinigungs- und Pflegeprodukte Schritt für Schritt ersetzen — für Haushalt, Vorrat, Wäsche und Badezimmer-Routine. Für genau <strong>72 Stunden</strong> gibt es 15 % auf alles. Kein Code. Kein Haken.</p>
+  </div>
+</section>
+
+<!-- BUNDLES -->
+<section class="bundles">
+  <div class="bundles-header">
+    <h2>Die vier Bundles</h2>
+    <p>Ausgewählt. Zusammengestellt. Jetzt rabattiert.</p>
+  </div>
+
+  <div class="bundle-grid">
+
+    <!-- BUNDLE 1 -->
+    <div class="bundle-card">
+      <div class="bundle-head">
+        <div class="bundle-number">01</div>
+        <div class="bundle-name">Haushalts-Bundle</div>
+        <div class="bundle-tagline">Fünf Produkte. Eine Zutat. Null synthetische Kompromisse.</div>
+        <div class="bundle-price">
+          <span class="price-was">24,90 €</span>
+          <span class="price-now">21,17 €</span>
+          <span class="price-tag">−15 %</span>
+        </div>
+      </div>
+      <div class="bundle-body">
+        <ul class="bundle-items">
+          <li>Kaiser-Natron® Pulver 250 g — <em>€ 3,80</em></li>
+          <li>Kaiser-Natron® Allzweckreiniger 750 ml</li>
+          <li>Kaiser-Natron® Allzweck-Spray 500 ml — <em>€ 3,99</em></li>
+          <li>Kaiser-Natron® Spülmittel 500 ml</li>
+          <li>Holste Wasch-Soda 500 g — <em>€ 3,99</em></li>
+        </ul>
+        <p class="bundle-desc">Fünf Produkte, die zusammenarbeiten wie ein gut eingespieltes Team — ohne Teambuilding-Events. Phosphatfrei. Konservierungsstofffrei. Mikroplastikfrei. <strong>Für Küche, Bad, Böden und Oberflächen.</strong></p>
+        <div class="tags">
+          <span class="tag">Küche</span>
+          <span class="tag">Bad</span>
+          <span class="tag">Böden</span>
+          <span class="tag">Oberflächen</span>
+          <span class="tag">Geschirr</span>
+        </div>
+        <a href="https://energeia-shop.de/kaiser-natron" class="btn-shop">Jetzt kaufen →</a>
+      </div>
+    </div>
+
+    <!-- BUNDLE 2 -->
+    <div class="bundle-card">
+      <div class="bundle-head" style="background: #004f30;">
+        <div class="bundle-number">02</div>
+        <div class="bundle-name">Vorrats-Bundle</div>
+        <div class="bundle-tagline">Sechs Packungen. Günstiger als Amazon. Ohne Abo-Falle.</div>
+        <div class="bundle-price">
+          <span class="price-was">19,90 € (Amazon: 20,46 €)</span>
+          <span class="price-now">16,92 €</span>
+          <span class="price-tag">−15 %</span>
+        </div>
+      </div>
+      <div class="bundle-body">
+        <ul class="bundle-items">
+          <li>6 × Kaiser-Natron® Pulver 250 g — <em>je € 3,80</em></li>
+        </ul>
+        <p class="bundle-desc">Das reinste, konzentrierteste Produkt im Sortiment — multipliziert. <strong>1,5 kg reines NaHCO₃</strong>, das günstiger ist als das Amazon-Angebot für dieselbe Menge. Für einen 4-Personen-Haushalt reicht das Bundle rund 3 Monate.</p>
+        <div class="tags">
+          <span class="tag">Küche &amp; Backen</span>
+          <span class="tag">Reinigung</span>
+          <span class="tag">Geruchsneutralisation</span>
+          <span class="tag">Vorrat</span>
+        </div>
+        <a href="https://energeia-shop.de/kaiser-natron" class="btn-shop">Jetzt kaufen →</a>
+      </div>
+    </div>
+
+    <!-- BUNDLE 3 -->
+    <div class="bundle-card">
+      <div class="bundle-head" style="background: #2d6b42;">
+        <div class="bundle-number">03</div>
+        <div class="bundle-name">Wäsche &amp; Pflege-Bundle</div>
+        <div class="bundle-tagline">Vier Produkte für saubere Wäsche — ohne Phosphate, ohne Parfümcocktail.</div>
+        <div class="bundle-price">
+          <span class="price-was">22,90 €</span>
+          <span class="price-now">19,47 €</span>
+          <span class="price-tag">−15 %</span>
+        </div>
+      </div>
+      <div class="bundle-body">
+        <ul class="bundle-items">
+          <li>Holste Wasch-Soda 500 g — <em>€ 3,99</em></li>
+          <li>Gazelle Wäschestärke 1.000 ml — <em>€ 5,49</em></li>
+          <li>Kaiser-Natron® Pulver 250 g — <em>€ 3,80</em></li>
+          <li>Linda Fleckenweg 200 ml — <em>€ 4,99</em></li>
+        </ul>
+        <p class="bundle-desc">Vier Produkte, die zusammenarbeiten wie eine Wäscherei aus dem letzten Jahrhundert — aber mit dem Wissen über Inhaltsstoffe aus diesem. <strong>Phosphatfrei und ohne unnötige Zusatzstoffe.</strong></p>
+        <div class="tags">
+          <span class="tag">Colorwäsche</span>
+          <span class="tag">Weißwäsche</span>
+          <span class="tag">Fleckenentfernung</span>
+          <span class="tag">Wäschestärke</span>
+        </div>
+        <a href="https://energeia-shop.de/kaiser-natron" class="btn-shop">Jetzt kaufen →</a>
+      </div>
+    </div>
+
+    <!-- BUNDLE 4 -->
+    <div class="bundle-card">
+      <div class="bundle-head" style="background: #005838;">
+        <div class="bundle-number">04</div>
+        <div class="bundle-name">Wohlfühl-Bundle</div>
+        <div class="bundle-tagline">Drei Produkte für Badezimmer-Routinen ohne langen Inhaltsstoff-Roman.</div>
+        <div class="bundle-price">
+          <span class="price-was">29,90 €</span>
+          <span class="price-now">25,42 €</span>
+          <span class="price-tag">−15 %</span>
+        </div>
+      </div>
+      <div class="bundle-body">
+        <ul class="bundle-items">
+          <li>Kaiser-Natron® Tabletten 100 g — <em>€ 3,79</em></li>
+          <li>Kaiser-Natron® Bad 500 g — <em>€ 9,99</em></li>
+          <li>Kaiser-Natron® Fußbad 500 g — <em>€ 9,99</em></li>
+        </ul>
+        <p class="bundle-desc">Für alle, die im Badezimmer keine Zutatenliste mit 23 Einträgen lesen möchten. <strong>Tabletten</strong> für vielseitige Verwendung, <strong>Bad</strong> als Badezusatz ohne Farbstoffe und Parfüm, <strong>Fußbad</strong> als Pflege-Ritual für die Füße.</p>
+        <div class="tags">
+          <span class="tag">Badezusatz</span>
+          <span class="tag">Fußpflege</span>
+          <span class="tag">Ohne Farbstoffe</span>
+          <span class="tag">Ohne Parfüm</span>
+          <span class="tag">Vegan</span>
+        </div>
+        <a href="https://energeia-shop.de/kaiser-natron" class="btn-shop">Jetzt kaufen →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STAFFELPREISE -->
+<section class="staffel">
+  <div class="staffel-inner">
+    <h2>Staffelpreise — mehr bestellen, mehr sparen</h2>
+    <p>Die 15 % gelten bereits auf alle Bundles. Wer mehr kombiniert, profitiert zusätzlich.</p>
+    <div class="staffel-rows">
+      <div class="staffel-row">
+        <span class="s-qty">ab 1</span>
+        <span class="s-pct">−15 %</span>
+        <span class="s-label">Bundle-Kampagne (72h)</span>
+      </div>
+      <div class="staffel-row">
+        <span class="s-qty">ab 3</span>
+        <span class="s-pct">−10 %</span>
+        <span class="s-label">Erste Entscheidung</span>
+      </div>
+      <div class="staffel-row">
+        <span class="s-qty">ab 6</span>
+        <span class="s-pct">−20 %</span>
+        <span class="s-label">Vorrat</span>
+      </div>
+      <div class="staffel-row">
+        <span class="s-qty">ab 10</span>
+        <span class="s-pct">−25 %</span>
+        <span class="s-label">Großkauf</span>
+      </div>
+    </div>
+    <a href="https://energeia-shop.de/kaiser-natron" class="btn-primary">Jetzt zu den Bundles →</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-inner">
+    <h2>Seit 1881. Sechs Generationen. Keine Änderungen am Rezept.</h2>
+    <p>Kaiser-Natron® wird seit über 140 Jahren von der <strong>Familie Holste in Bielefeld</strong> produziert. Die Formel ist dieselbe wie damals: reines Natriumhydrogencarbonat, ohne Zusätze — nicht weil man es vergessen hat, sondern weil man an einem vollkommenen Molekül nichts verbessern kann.</p>
+    <p>energeia-shop.de führt Kaiser-Natron® als Teil der ENERGEIA Markenfamilie — mit direktem Zugang zu allen Holste-Produkten, gebündelt für den österreichischen und deutschen Markt.</p>
+    <div class="facts">
+      <div class="fact">
+        <div class="fact-n">1881</div>
+        <div class="fact-l">Gründungsjahr Familie Holste, Bielefeld</div>
+      </div>
+      <div class="fact">
+        <div class="fact-n">200+</div>
+        <div class="fact-l">Dokumentierte Anwendungsgebiete für NaHCO₃</div>
+      </div>
+      <div class="fact">
+        <div class="fact-n">0</div>
+        <div class="fact-l">Zusatzstoffe, Konservierungsmittel, Mikroplastik</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  Alle Preise inkl. MwSt. Die 15 %-Aktion ist zeitlich begrenzt und endet 72 Stunden nach Kampagnenstart. Staffelpreise gelten für Einzelprodukte gemäß aktueller Preisliste. Alle Produkte sind Haushalts- und Pflegeprodukte — kein Ersatz für medizinische oder therapeutische Maßnahmen.
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>energeia-shop.de/kaiser-natron</strong><br>
+  ENERGEIA · SHT CHI GmbH · Linzerstrasse 76 · AT-4600 Wels<br>
+  UID: ATU75123689 · Tel.: +43 664 5550175<br>
+  <br>
+  <a href="https://energeia-shop.de/kaiser-natron">Shop</a> ·
+  <a href="https://kaiser-natron.at/impressum">Impressum</a> ·
+  <a href="https://kaiser-natron.at/datenschutz">Datenschutz</a> ·
+  <a href="https://kaiser-natron.at/agb">AGB</a>
+</footer>
+
+<script>
+(function() {
+  const KEY = 'kn_end_v2';
+  let end = localStorage.getItem(KEY);
+  if (!end) {
+    end = Date.now() + 72 * 3600000;
+    localStorage.setItem(KEY, end);
+  }
+  end = +end;
+  function pad(n) { return String(Math.max(0,n)).padStart(2,'0'); }
+  function tick() {
+    const d = end - Date.now();
+    document.getElementById('cd-h').textContent = pad(Math.floor(d/3600000));
+    document.getElementById('cd-m').textContent = pad(Math.floor((d%3600000)/60000));
+    document.getElementById('cd-s').textContent = pad(Math.floor((d%60000)/1000));
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
