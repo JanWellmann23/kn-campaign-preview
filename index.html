@@ -159,16 +159,36 @@ body { font-family:var(--sans); font-size:15px; line-height:1.65; color:var(--te
 .btn-shop { display:block; background:var(--red); color:var(--white); text-align:center; font-size:13.5px; font-weight:600; padding:13px 20px; border-radius:var(--r); text-decoration:none; letter-spacing:.03em; transition:background .15s; }
 .btn-shop:hover { background:var(--red-dk); }
 
-/* ── STAFFEL ── */
-.staffel { background:var(--green-dk); color:var(--white); padding:72px 0; }
-.staffel-inner { max-width:640px; margin:0 auto; text-align:center; padding:0 32px; }
-.staffel h2 { font-family:var(--serif); font-size:clamp(20px,3vw,30px); font-weight:700; margin-bottom:8px; }
-.staffel > .staffel-inner > p { font-size:14px; opacity:.6; margin-bottom:32px; }
-.s-rows { display:flex; flex-direction:column; gap:8px; margin-bottom:32px; }
-.s-row { display:flex; align-items:center; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:var(--r); padding:12px 20px; }
-.s-qty { font-family:var(--serif); font-size:17px; font-weight:700; min-width:64px; text-align:left; }
-.s-pct { font-weight:600; font-size:15px; color:#a8f0c8; min-width:64px; text-align:center; }
-.s-label { font-size:13px; opacity:.5; text-align:right; flex:1; }
+
+/* ── STAFFEL (SUBSCRIPTION) ── */
+.staffel { background:var(--green-dk); color:var(--white); padding:80px 0; }
+.staffel-inner { max-width:660px; margin:0 auto; text-align:center; padding:0 32px; }
+.staffel-badge { display:inline-block; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.8); font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:5px 14px; border-radius:99px; margin-bottom:20px; }
+.staffel h2 { font-family:var(--serif); font-size:clamp(22px,3vw,32px); font-weight:700; margin-bottom:10px; }
+.staffel > .staffel-inner > p { font-size:14px; opacity:.6; margin-bottom:36px; }
+.s-rows { display:flex; flex-direction:column; gap:10px; margin-bottom:36px; text-align:left; }
+.s-row { display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:6px; padding:16px 20px; gap:16px; transition:background .15s; }
+.s-row--active { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25); }
+.s-row--onetimer { opacity:.55; }
+.s-left { display:flex; flex-direction:column; gap:3px; }
+.s-qty { font-family:var(--serif); font-size:17px; font-weight:700; color:var(--white); }
+.s-desc { font-size:12px; opacity:.55; line-height:1.4; }
+.s-pct { font-weight:700; font-size:18px; color:#a8f0c8; white-space:nowrap; flex-shrink:0; }
+.s-pct--none { color:rgba(255,255,255,.3); }
+.s-interest { background:rgba(0,0,0,.2); border:1px solid rgba(255,255,255,.1); border-radius:8px; padding:28px 24px; text-align:center; }
+.s-interest-text { font-size:14px; line-height:1.7; opacity:.8; margin-bottom:20px; }
+.s-form { display:flex; gap:8px; max-width:480px; margin:0 auto 12px; }
+.s-email { flex:1; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:var(--r); color:var(--white); font-size:14px; padding:12px 16px; outline:none; font-family:var(--sans); }
+.s-email::placeholder { color:rgba(255,255,255,.4); }
+.s-email:focus { border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.15); }
+.s-submit { background:var(--red); color:var(--white); border:none; border-radius:var(--r); font-family:var(--sans); font-size:13px; font-weight:600; padding:12px 20px; cursor:pointer; white-space:nowrap; transition:background .15s; }
+.s-submit:hover { background:var(--red-dk); }
+.s-form-confirm { color:#a8f0c8; font-size:14px; font-weight:600; margin-bottom:8px; }
+.s-interest-note { font-size:11px; opacity:.4; margin-top:8px; }
+@media (max-width:540px) {
+  .s-form { flex-direction:column; }
+  .s-submit { width:100%; }
+}
 
 /* ── DISCLAIMER / FOOTER ── */
 .disclaimer { background:var(--off); border-top:1px solid var(--border); padding:24px 32px; text-align:center; font-size:11.5px; color:var(--muted); line-height:1.6; }
@@ -572,15 +592,50 @@ footer strong { color:rgba(255,255,255,.65); }
 <!-- STAFFEL -->
 <section class="staffel">
   <div class="staffel-inner">
-    <h2>Staffelpreise</h2>
-    <p>Die 15 % gelten bereits auf alle Bundles. Wer mehr kombiniert, spart zusätzlich.</p>
+    <div class="staffel-badge">Demnächst verfügbar</div>
+    <h2>Natron-Abo — nie wieder ausgehen.</h2>
+    <p>Automatisch nachgeliefert, zum besten Preis. Je öfter, desto mehr sparen.</p>
+
     <div class="s-rows">
-      <div class="s-row"><span class="s-qty">ab 1</span><span class="s-pct">−15 %</span><span class="s-label">Kampagnen-Rabatt (72h)</span></div>
-      <div class="s-row"><span class="s-qty">ab 3</span><span class="s-pct">−10 %</span><span class="s-label">Erste Entscheidung</span></div>
-      <div class="s-row"><span class="s-qty">ab 6</span><span class="s-pct">−20 %</span><span class="s-label">Vorrat</span></div>
-      <div class="s-row"><span class="s-qty">ab 10</span><span class="s-pct">−25 %</span><span class="s-label">Großkauf</span></div>
+      <div class="s-row s-row--active">
+        <div class="s-left">
+          <span class="s-qty">Monatlich</span>
+          <span class="s-desc">Für aktive Haushalte, die täglich auf Natron setzen</span>
+        </div>
+        <span class="s-pct">−15 %</span>
+      </div>
+      <div class="s-row">
+        <div class="s-left">
+          <span class="s-qty">Quartalsweise</span>
+          <span class="s-desc">Alle 3 Monate — ideal für Standard-Familienhaushalte</span>
+        </div>
+        <span class="s-pct">−10 %</span>
+      </div>
+      <div class="s-row">
+        <div class="s-left">
+          <span class="s-qty">Halbjährlich</span>
+          <span class="s-desc">Alle 6 Monate — für leichteren Verbrauch und Einstieg</span>
+        </div>
+        <span class="s-pct">−5 %</span>
+      </div>
+      <div class="s-row s-row--onetimer">
+        <div class="s-left">
+          <span class="s-qty">Einmalig</span>
+          <span class="s-desc">Ohne Abo — jederzeit bestellen, kein Commitment</span>
+        </div>
+        <span class="s-pct s-pct--none">—</span>
+      </div>
     </div>
-    <a href="https://energeia-shop.de/kaiser-natron" class="btn-red">Jetzt alle Bundles entdecken →</a>
+
+    <div class="s-interest">
+      <p class="s-interest-text">Das Abo-System ist in Vorbereitung.<br>Tragen Sie sich jetzt ein — wir benachrichtigen Sie beim Launch.</p>
+      <form class="s-form" onsubmit="handleInterest(event)">
+        <input type="email" class="s-email" placeholder="Ihre E-Mail-Adresse" required>
+        <button type="submit" class="s-submit">Interesse anmelden →</button>
+      </form>
+      <p class="s-form-confirm" id="s-confirm" style="display:none;">✓ Eingetragen. Wir melden uns beim Launch.</p>
+      <p class="s-interest-note">Kein Spam. Nur eine Nachricht wenn das Abo live geht.</p>
+    </div>
   </div>
 </section>
 
@@ -610,6 +665,19 @@ footer strong { color:rgba(255,255,255,.65); }
   }
   tick();setInterval(tick,1000);
 })();
+
+function handleInterest(e) {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.querySelector('.s-email').value;
+  // Store in localStorage as a simple log
+  const existing = JSON.parse(localStorage.getItem('kn_interest') || '[]');
+  existing.push({ email, ts: new Date().toISOString() });
+  localStorage.setItem('kn_interest', JSON.stringify(existing));
+  form.style.display = 'none';
+  document.getElementById('s-confirm').style.display = 'block';
+}
+
 </script>
 </body>
 </html>
